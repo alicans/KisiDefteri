@@ -85,7 +85,6 @@
             // 
             // lstKisiler
             // 
-            lstKisiler.DisplayMember = "TamAd";
             lstKisiler.FormattingEnabled = true;
             lstKisiler.ItemHeight = 15;
             lstKisiler.Location = new Point(12, 56);
