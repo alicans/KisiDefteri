@@ -96,7 +96,7 @@
             // 
             btnDuzenle.Location = new Point(12, 366);
             btnDuzenle.Name = "btnDuzenle";
-            btnDuzenle.Size = new Size(100, 23);
+            btnDuzenle.Size = new Size(148, 37);
             btnDuzenle.TabIndex = 6;
             btnDuzenle.Text = "Düzenle";
             btnDuzenle.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // 
             // btnSil
             // 
-            btnSil.Location = new Point(118, 366);
+            btnSil.Location = new Point(166, 366);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(100, 23);
+            btnSil.Size = new Size(133, 37);
             btnSil.TabIndex = 7;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
@@ -121,6 +121,7 @@
             btnYukari.Size = new Size(32, 32);
             btnYukari.TabIndex = 8;
             btnYukari.UseVisualStyleBackColor = true;
+            btnYukari.Click += btnYukari_Click;
             // 
             // btnAsagi
             // 
@@ -131,6 +132,7 @@
             btnAsagi.Size = new Size(32, 32);
             btnAsagi.TabIndex = 9;
             btnAsagi.UseVisualStyleBackColor = true;
+            btnAsagi.Click += btnAsagi_Click;
             // 
             // Form1
             // 

@@ -53,6 +53,7 @@
             btnKaydett.TabIndex = 1;
             btnKaydett.Text = "Kaydet";
             btnKaydett.UseVisualStyleBackColor = true;
+            btnKaydett.Click += btnKaydett_Click;
             // 
             // txtAdi
             // 
@@ -85,6 +86,7 @@
             btnIptal.TabIndex = 5;
             btnIptal.Text = "İptal";
             btnIptal.UseVisualStyleBackColor = true;
+            btnIptal.Click += btnIptal_Click;
             // 
             // Form2
             // 
@@ -99,7 +101,6 @@
             Controls.Add(label1);
             Name = "Form2";
             Text = "Düzenle";
-            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

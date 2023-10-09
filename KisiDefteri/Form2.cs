@@ -12,19 +12,31 @@ namespace KisiDefteri
 {
     public partial class Form2 : Form
     {
-        public Form2(Kisi? kisi)
+        public Kisi GidenKisi;
+        public Form2(Kisi kisi)
         {
             InitializeComponent();
-            
-            txtAdi.Text = kisi.Ad.ToString();
-            txtSoyadi.Text = kisi.Soyad.ToString();
-            
 
+            txtAdi.Text = kisi.Ad;
+            txtSoyadi.Text = kisi.Soyad;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+
+        private void btnKaydett_Click(object sender, EventArgs e)
         {
+            GidenKisi.Ad = txtAdi.Text;
+            GidenKisi.Soyad = txtSoyadi.Text;
+
+            this.Close();
 
         }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Owner.Show();
+        }
+
+
     }
 }
