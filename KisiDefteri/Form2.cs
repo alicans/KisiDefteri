@@ -12,9 +12,10 @@ namespace KisiDefteri
 {
     public partial class Form2 : Form
     {
-        public Kisi GidenKisi;
+        private readonly Kisi _kisi;
         public Form2(Kisi kisi)
         {
+            _kisi = kisi;
             InitializeComponent();
 
             txtAdi.Text = kisi.Ad;
@@ -24,17 +25,32 @@ namespace KisiDefteri
 
         private void btnKaydett_Click(object sender, EventArgs e)
         {
-            GidenKisi.Ad = txtAdi.Text;
-            GidenKisi.Soyad = txtSoyadi.Text;
-            Owner.Refresh();
-            this.Close();
+            string ad = txtAdi.Text.Trim();
+            string soyad = txtSoyadi.Text.Trim();
+
+            if (ad == "" || soyad == "")
+            {
+                MessageBox.Show("Lütfen Ad veya Soyad giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+                _kisi.Ad = ad;
+                _kisi.Soyad = soyad;
+                this.Close();
+
+            }
+
+
+
+            
 
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Owner.Show();
+            Close();
         }
 
 

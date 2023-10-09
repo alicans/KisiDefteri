@@ -91,6 +91,7 @@
             lstKisiler.Name = "lstKisiler";
             lstKisiler.Size = new Size(287, 304);
             lstKisiler.TabIndex = 3;
+            lstKisiler.DoubleClick += lstKisiler_DoubleClick;
             // 
             // btnDuzenle
             // 

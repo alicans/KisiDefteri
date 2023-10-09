@@ -94,9 +94,13 @@ namespace KisiDefteri
             {
                 Kisi kisi = (Kisi)lstKisiler.SelectedItem;
                 Form2 frmDuzenle = new Form2(kisi);
-                frmDuzenle.GidenKisi = kisi;
+
+                ;
                 frmDuzenle.Owner = this;
                 frmDuzenle.ShowDialog();
+
+                KisileriListele();
+                lstKisiler.SelectedItem = kisi;
             }
             else
             {
@@ -117,5 +121,9 @@ namespace KisiDefteri
 
         }
 
+        private void lstKisiler_DoubleClick(object sender, EventArgs e)
+        {
+            btnDuzenle.PerformClick();
+        }
     }
 }
