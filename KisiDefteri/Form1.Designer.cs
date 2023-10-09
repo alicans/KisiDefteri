@@ -61,7 +61,7 @@
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(25, 15);
-            label1.TabIndex = 2;
+            label1.TabIndex = 8;
             label1.Text = "Ad:";
             // 
             // label2
@@ -70,7 +70,7 @@
             label2.Location = new Point(118, 9);
             label2.Name = "label2";
             label2.Size = new Size(42, 15);
-            label2.TabIndex = 3;
+            label2.TabIndex = 9;
             label2.Text = "Soyad:";
             // 
             // btnEkle
@@ -78,7 +78,7 @@
             btnEkle.Location = new Point(224, 27);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(75, 23);
-            btnEkle.TabIndex = 4;
+            btnEkle.TabIndex = 2;
             btnEkle.Text = "Ekle >>";
             btnEkle.UseVisualStyleBackColor = true;
             btnEkle.Click += btnEkle_Click;
@@ -90,14 +90,14 @@
             lstKisiler.Location = new Point(12, 56);
             lstKisiler.Name = "lstKisiler";
             lstKisiler.Size = new Size(287, 304);
-            lstKisiler.TabIndex = 5;
+            lstKisiler.TabIndex = 3;
             // 
             // btnDuzenle
             // 
             btnDuzenle.Location = new Point(12, 366);
             btnDuzenle.Name = "btnDuzenle";
             btnDuzenle.Size = new Size(148, 37);
-            btnDuzenle.TabIndex = 6;
+            btnDuzenle.TabIndex = 4;
             btnDuzenle.Text = "Düzenle";
             btnDuzenle.UseVisualStyleBackColor = true;
             btnDuzenle.Click += btnDuzenle_Click;
@@ -107,7 +107,7 @@
             btnSil.Location = new Point(166, 366);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(133, 37);
-            btnSil.TabIndex = 7;
+            btnSil.TabIndex = 5;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
             btnSil.Click += btnSil_Click;
@@ -119,7 +119,7 @@
             btnYukari.Location = new Point(305, 135);
             btnYukari.Name = "btnYukari";
             btnYukari.Size = new Size(32, 32);
-            btnYukari.TabIndex = 8;
+            btnYukari.TabIndex = 7;
             btnYukari.UseVisualStyleBackColor = true;
             btnYukari.Click += btnYukari_Click;
             // 
@@ -130,7 +130,7 @@
             btnAsagi.Location = new Point(305, 173);
             btnAsagi.Name = "btnAsagi";
             btnAsagi.Size = new Size(32, 32);
-            btnAsagi.TabIndex = 9;
+            btnAsagi.TabIndex = 6;
             btnAsagi.UseVisualStyleBackColor = true;
             btnAsagi.Click += btnAsagi_Click;
             // 
@@ -150,6 +150,7 @@
             Controls.Add(txtSoyad);
             Controls.Add(txtAd);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kişi Defteri";
             ResumeLayout(false);
             PerformLayout();

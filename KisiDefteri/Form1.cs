@@ -4,13 +4,23 @@ namespace KisiDefteri
 {
     public partial class Form1 : Form
     {
-        List<Kisi> kisiler = new List<Kisi>();
+        List<Kisi> kisiler;
+
         public Form1()
         {
             InitializeComponent();
-            Listele();
+            OrnekVerileriYukle();
+            KisileriListele();
         }
 
+        private void OrnekVerileriYukle()
+        {
+            kisiler = new List<Kisi> {
+                new Kisi() { Ad = "Ali", Soyad = "Yýlmaz" },
+                new Kisi() { Ad = "Can", Soyad = "Öztürk" },
+                new Kisi() { Ad = "Cem", Soyad = "Þahin" },
+                new Kisi() { Ad = "Ece", Soyad = "Doðan" } };
+        }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -21,17 +31,21 @@ namespace KisiDefteri
                 Kisi yeniKisi = new Kisi() { Ad = txtAd.Text, Soyad = txtSoyad.Text };
                 kisiler.Add(yeniKisi);
 
-                Listele();
+                KisileriListele();
             }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             Kisi secilenKisi = (Kisi)lstKisiler.SelectedItem;
+            int sid = lstKisiler.SelectedIndex;
+            if (sid < 0) return;
 
             kisiler.Remove(secilenKisi);
             lstKisiler.Items.Remove(secilenKisi);
             lstKisiler.Update();
+
+            lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
@@ -62,12 +76,12 @@ namespace KisiDefteri
                 kisiler.RemoveAt(sid);
                 kisiler.Insert(sid - 1, secilen);
 
-                Listele();
+                KisileriListele();
                 lstKisiler.SelectedIndex = sid - 1;
             }
         }
 
-        private void Listele()
+        private void KisileriListele()
         {
             lstKisiler.Items.Clear();
 
@@ -86,7 +100,7 @@ namespace KisiDefteri
             Kisi secilen = kisiler[sid];
             kisiler.RemoveAt(sid);
             kisiler.Insert(sid + 1, secilen);
-            Listele();
+            KisileriListele();
             lstKisiler.SelectedIndex = sid + 1;
         }
     }

@@ -100,6 +100,7 @@
             Controls.Add(btnKaydett);
             Controls.Add(label1);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Düzenle";
             ResumeLayout(false);
             PerformLayout();
