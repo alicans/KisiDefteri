@@ -12,9 +12,19 @@ namespace KisiDefteri
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(Kisi? kisi)
         {
             InitializeComponent();
+            
+            txtAdi.Text = kisi.Ad.ToString();
+            txtSoyadi.Text = kisi.Soyad.ToString();
+            
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

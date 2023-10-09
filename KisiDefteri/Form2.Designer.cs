@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            btnKaydett = new Button();
+            txtAdi = new TextBox();
+            txtSoyadi = new TextBox();
             label2 = new Label();
-            button2 = new Button();
+            btnIptal = new Button();
             SuspendLayout();
             // 
             // label1
@@ -45,28 +45,28 @@
             label1.TabIndex = 0;
             label1.Text = "Ad:";
             // 
-            // button1
+            // btnKaydett
             // 
-            button1.Location = new Point(25, 120);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 32);
-            button1.TabIndex = 1;
-            button1.Text = "Kaydet";
-            button1.UseVisualStyleBackColor = true;
+            btnKaydett.Location = new Point(25, 120);
+            btnKaydett.Name = "btnKaydett";
+            btnKaydett.Size = new Size(96, 32);
+            btnKaydett.TabIndex = 1;
+            btnKaydett.Text = "Kaydet";
+            btnKaydett.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtAdi
             // 
-            textBox1.Location = new Point(73, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 23);
-            textBox1.TabIndex = 2;
+            txtAdi.Location = new Point(73, 37);
+            txtAdi.Name = "txtAdi";
+            txtAdi.Size = new Size(158, 23);
+            txtAdi.TabIndex = 2;
             // 
-            // textBox2
+            // txtSoyadi
             // 
-            textBox2.Location = new Point(73, 78);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(158, 23);
-            textBox2.TabIndex = 4;
+            txtSoyadi.Location = new Point(73, 78);
+            txtSoyadi.Name = "txtSoyadi";
+            txtSoyadi.Size = new Size(158, 23);
+            txtSoyadi.TabIndex = 4;
             // 
             // label2
             // 
@@ -77,28 +77,29 @@
             label2.TabIndex = 3;
             label2.Text = "Soyad:";
             // 
-            // button2
+            // btnIptal
             // 
-            button2.Location = new Point(127, 120);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 32);
-            button2.TabIndex = 5;
-            button2.Text = "İptal";
-            button2.UseVisualStyleBackColor = true;
+            btnIptal.Location = new Point(127, 120);
+            btnIptal.Name = "btnIptal";
+            btnIptal.Size = new Size(104, 32);
+            btnIptal.TabIndex = 5;
+            btnIptal.Text = "İptal";
+            btnIptal.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(262, 177);
-            Controls.Add(button2);
-            Controls.Add(textBox2);
+            Controls.Add(btnIptal);
+            Controls.Add(txtSoyadi);
             Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(txtAdi);
+            Controls.Add(btnKaydett);
             Controls.Add(label1);
             Name = "Form2";
             Text = "Düzenle";
+            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -106,10 +107,10 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Button btnKaydett;
+        private TextBox txtAdi;
+        private TextBox txtSoyadi;
         private Label label2;
-        private Button button2;
+        private Button btnIptal;
     }
 }

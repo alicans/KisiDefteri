@@ -33,12 +33,12 @@
             txtSoyad = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            listBox1 = new ListBox();
+            btnEkle = new Button();
+            lstKisiler = new ListBox();
             btnDuzenle = new Button();
             btnSil = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnYukari = new Button();
+            btnAsagi = new Button();
             SuspendLayout();
             // 
             // txtAd
@@ -73,23 +73,24 @@
             label2.TabIndex = 3;
             label2.Text = "Soyad:";
             // 
-            // button1
+            // btnEkle
             // 
-            button1.Location = new Point(224, 27);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Ekle >>";
-            button1.UseVisualStyleBackColor = true;
+            btnEkle.Location = new Point(224, 27);
+            btnEkle.Name = "btnEkle";
+            btnEkle.Size = new Size(75, 23);
+            btnEkle.TabIndex = 4;
+            btnEkle.Text = "Ekle >>";
+            btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
-            // listBox1
+            // lstKisiler
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 56);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(287, 304);
-            listBox1.TabIndex = 5;
+            lstKisiler.FormattingEnabled = true;
+            lstKisiler.ItemHeight = 15;
+            lstKisiler.Location = new Point(12, 56);
+            lstKisiler.Name = "lstKisiler";
+            lstKisiler.Size = new Size(287, 304);
+            lstKisiler.TabIndex = 5;
             // 
             // btnDuzenle
             // 
@@ -99,6 +100,7 @@
             btnDuzenle.TabIndex = 6;
             btnDuzenle.Text = "Düzenle";
             btnDuzenle.UseVisualStyleBackColor = true;
+            btnDuzenle.Click += btnDuzenle_Click;
             // 
             // btnSil
             // 
@@ -108,38 +110,39 @@
             btnSil.TabIndex = 7;
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
-            // button2
+            // btnYukari
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Location = new Point(305, 135);
-            button2.Name = "button2";
-            button2.Size = new Size(32, 32);
-            button2.TabIndex = 8;
-            button2.UseVisualStyleBackColor = true;
+            btnYukari.BackgroundImage = (Image)resources.GetObject("btnYukari.BackgroundImage");
+            btnYukari.BackgroundImageLayout = ImageLayout.Zoom;
+            btnYukari.Location = new Point(305, 135);
+            btnYukari.Name = "btnYukari";
+            btnYukari.Size = new Size(32, 32);
+            btnYukari.TabIndex = 8;
+            btnYukari.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAsagi
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.Location = new Point(305, 173);
-            button3.Name = "button3";
-            button3.Size = new Size(32, 32);
-            button3.TabIndex = 9;
-            button3.UseVisualStyleBackColor = true;
+            btnAsagi.BackgroundImage = (Image)resources.GetObject("btnAsagi.BackgroundImage");
+            btnAsagi.BackgroundImageLayout = ImageLayout.Zoom;
+            btnAsagi.Location = new Point(305, 173);
+            btnAsagi.Name = "btnAsagi";
+            btnAsagi.Size = new Size(32, 32);
+            btnAsagi.TabIndex = 9;
+            btnAsagi.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(347, 415);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnAsagi);
+            Controls.Add(btnYukari);
             Controls.Add(btnSil);
             Controls.Add(btnDuzenle);
-            Controls.Add(listBox1);
-            Controls.Add(button1);
+            Controls.Add(lstKisiler);
+            Controls.Add(btnEkle);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtSoyad);
@@ -156,11 +159,11 @@
         private TextBox txtSoyad;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private ListBox listBox1;
+        private Button btnEkle;
+        private ListBox lstKisiler;
         private Button btnDuzenle;
         private Button btnSil;
-        private Button button2;
-        private Button button3;
+        private Button btnYukari;
+        private Button btnAsagi;
     }
 }
