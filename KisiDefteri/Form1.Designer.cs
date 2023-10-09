@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtAd = new TextBox();
             txtSoyad = new TextBox();
             label1 = new Label();
@@ -36,6 +37,8 @@
             listBox1 = new ListBox();
             btnDuzenle = new Button();
             btnSil = new Button();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // txtAd
@@ -106,11 +109,33 @@
             btnSil.Text = "Sil";
             btnSil.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(305, 135);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 32);
+            button2.TabIndex = 8;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Location = new Point(305, 173);
+            button3.Name = "button3";
+            button3.Size = new Size(32, 32);
+            button3.TabIndex = 9;
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(332, 415);
+            ClientSize = new Size(347, 415);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(btnSil);
             Controls.Add(btnDuzenle);
             Controls.Add(listBox1);
@@ -135,5 +160,7 @@
         private ListBox listBox1;
         private Button btnDuzenle;
         private Button btnSil;
+        private Button button2;
+        private Button button3;
     }
 }
