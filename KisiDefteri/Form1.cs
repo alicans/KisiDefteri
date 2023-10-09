@@ -19,19 +19,25 @@ namespace KisiDefteri
                 new Kisi() { Ad = "Ali", Soyad = "Yýlmaz" },
                 new Kisi() { Ad = "Can", Soyad = "Öztürk" },
                 new Kisi() { Ad = "Cem", Soyad = "Þahin" },
-                new Kisi() { Ad = "Ece", Soyad = "Doðan" } };
+                new Kisi() { Ad = "Ece", Soyad = "Doðan" }
+            };
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
             if (txtAd.Text == "" || txtSoyad.Text == "")
+            {
                 MessageBox.Show("Lütfen Ad veya Soyad giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             else
             {
-                Kisi yeniKisi = new Kisi() { Ad = txtAd.Text, Soyad = txtSoyad.Text };
+                Kisi yeniKisi = new Kisi() { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim() };
                 kisiler.Add(yeniKisi);
-
                 KisileriListele();
+                lstKisiler.SelectedItem = yeniKisi;
+
+                txtAd.Text = txtSoyad.Text = "";
             }
         }
 

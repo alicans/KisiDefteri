@@ -26,7 +26,7 @@ namespace KisiDefteri
         {
             GidenKisi.Ad = txtAdi.Text;
             GidenKisi.Soyad = txtSoyadi.Text;
-
+            Owner.Refresh();
             this.Close();
 
         }

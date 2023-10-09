@@ -11,10 +11,11 @@ namespace KisiDefteri
         public Kisi() { Ad = ""; Soyad = ""; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
+        public string TamAd => $"{Ad} {Soyad}";
 
         public override string ToString()
         {
-            return Ad + " "+ Soyad;
+            return Ad + " " + Soyad;
         }
     }
 }
