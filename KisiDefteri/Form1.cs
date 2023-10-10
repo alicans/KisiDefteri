@@ -13,19 +13,35 @@ namespace KisiDefteri
         public Form1()
         {
             InitializeComponent();
-            OrnekVerileriYukle();
+            VerileriYukle();
             KisileriListele();
         }
 
-        private void OrnekVerileriYukle()
+        private void VerileriYukle()
         {
-            kisiler = new List<Kisi> {
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                kisiler = JsonSerializer.Deserialize<List<Kisi>>(json)!;
+            }
+            catch (Exception)
+            {
+
+                kisiler = OrnekVeriler();
+            }
+        }
+
+        private List<Kisi> OrnekVeriler()
+        {
+            return kisiler = new List<Kisi> {
                 new Kisi() { Ad = "Ali", Soyad = "Yýlmaz" },
                 new Kisi() { Ad = "Can", Soyad = "Öztürk" },
                 new Kisi() { Ad = "Cem", Soyad = "Þahin" },
                 new Kisi() { Ad = "Ece", Soyad = "Doðan" }
             };
         }
+
+
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -163,7 +179,7 @@ namespace KisiDefteri
             };
 
             string json = JsonSerializer.Serialize(kisiler, options);
-            File.WriteAllText("veri.json",json);
+            File.WriteAllText("veri.json", json);
         }
     }
 }
