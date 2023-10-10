@@ -47,13 +47,21 @@ namespace KisiDefteri
         {
             if (lstKisiler.SelectedItem != null)
             {
-                Kisi secilenKisi = (Kisi)lstKisiler.SelectedItem;
-                int sid = lstKisiler.SelectedIndex;
+                DialogResult dr = MessageBox.Show(lstKisiler.SelectedItem + " Silinecek. Emin misiniz?", "Silme Onayý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {
 
-                kisiler.Remove(secilenKisi);
-                KisileriListele();
+                    Kisi secilenKisi = (Kisi)lstKisiler.SelectedItem;
+                    int sid = lstKisiler.SelectedIndex;
 
-                lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
+                    kisiler.Remove(secilenKisi);
+                    KisileriListele();
+
+                    lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
+
+                }
+
+
             }
             else
             {
@@ -124,6 +132,14 @@ namespace KisiDefteri
         private void lstKisiler_DoubleClick(object sender, EventArgs e)
         {
             btnDuzenle.PerformClick();
+        }
+
+        private void lstKisiler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Delete))
+            {
+                btnSil.PerformClick();
+            }
         }
     }
 }

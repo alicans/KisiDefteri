@@ -92,6 +92,7 @@
             lstKisiler.Size = new Size(287, 304);
             lstKisiler.TabIndex = 3;
             lstKisiler.DoubleClick += lstKisiler_DoubleClick;
+            lstKisiler.KeyDown += lstKisiler_KeyDown;
             // 
             // btnDuzenle
             // 
@@ -137,6 +138,7 @@
             // 
             // Form1
             // 
+            AcceptButton = btnEkle;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(347, 415);
@@ -150,6 +152,7 @@
             Controls.Add(label1);
             Controls.Add(txtSoyad);
             Controls.Add(txtAd);
+            MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kişi Defteri";
