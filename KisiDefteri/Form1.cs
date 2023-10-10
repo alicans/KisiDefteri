@@ -48,6 +48,7 @@ namespace KisiDefteri
             if (lstKisiler.SelectedItem != null)
             {
                 DialogResult dr = MessageBox.Show(lstKisiler.SelectedItem + " Silinecek. Emin misiniz?", "Silme Onayý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                 if (dr == DialogResult.OK)
                 {
 
@@ -58,10 +59,7 @@ namespace KisiDefteri
                     KisileriListele();
 
                     lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
-
                 }
-
-
             }
             else
             {
