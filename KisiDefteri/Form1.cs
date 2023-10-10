@@ -1,5 +1,7 @@
 using System.Drawing.Design;
 using System.Security.Cryptography;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace KisiDefteri
@@ -149,6 +151,19 @@ namespace KisiDefteri
             {
                 btnSil.PerformClick();
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var options = new JsonSerializerOptions()
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+
+            };
+
+            string json = JsonSerializer.Serialize(kisiler, options);
+            File.WriteAllText("veri.json",json);
         }
     }
 }
