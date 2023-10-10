@@ -99,6 +99,7 @@
             Controls.Add(txtAdi);
             Controls.Add(btnKaydett);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Düzenle";
