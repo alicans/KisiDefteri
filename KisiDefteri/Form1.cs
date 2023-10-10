@@ -1,3 +1,4 @@
+using System.Drawing.Design;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
@@ -47,18 +48,28 @@ namespace KisiDefteri
         {
             if (lstKisiler.SelectedItem != null)
             {
-                DialogResult dr = MessageBox.Show(lstKisiler.SelectedItem + " Silinecek. Emin misiniz?", "Silme Onayý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show(lstKisiler.SelectedItem + " Silinecek. Emin misiniz?", "Silme Onayý", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                if (dr == DialogResult.OK)
+                if (dr == DialogResult.Yes)
                 {
-
+                    int currentIndex = lstKisiler.SelectedIndex;
                     Kisi secilenKisi = (Kisi)lstKisiler.SelectedItem;
-                    int sid = lstKisiler.SelectedIndex;
 
                     kisiler.Remove(secilenKisi);
                     KisileriListele();
 
-                    lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
+                    if (currentIndex < lstKisiler.Items.Count)
+                        lstKisiler.SelectedIndex = currentIndex;
+                    else
+                        lstKisiler.SelectedIndex = currentIndex - 1;
+
+                    //Kisi secilenKisi = (Kisi)lstKisiler.SelectedItem;
+                    //int sid = lstKisiler.SelectedIndex;
+
+                    //kisiler.Remove(secilenKisi);
+                    //KisileriListele();
+
+                    //lstKisiler.SelectedIndex = Math.Min(sid, kisiler.Count - 1);
                 }
             }
             else
